@@ -86,3 +86,4 @@ painel = ""
 
 if __name__ == '__main__':
 	main()
+	playsound('Alert.mp3')
