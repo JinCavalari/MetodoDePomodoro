@@ -2,7 +2,7 @@
 Projeto em Python com algorítmo para executar o Método de Pomodoro de acordo com suas preferências (configurável).
 <br><b>Aviso:</b> Feito em Sistema Operacional Windows, então é provável que tenha incompatibilidade com outras OS's (Linux e Mac) em <b>relação ao uso das bibliotecas.</b>
 
-<b>Dependências: Python >= 3.10.9, playsound 1.2.2, pyttx3</b><br>
+<b>Dependências: Python >= 3.10.9, playsound 1.2.2, pyttsx3</b><br>
 Com exceção do Python, as dependências podem ser instaladas automaticamente ao executar o arquivo "dependecias.bat"
 
 <b>Configurações</b><br>
