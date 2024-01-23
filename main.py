@@ -3,8 +3,8 @@ from time import sleep
 import time
 from datetime import datetime, timedelta
 import json
+import pyttsx3
 
-import customtkinter
 import threading
 from playsound import playsound
 
@@ -22,25 +22,24 @@ class ConfigJson():
 def aviso():
 	global config
 	global etapa
-	window = customtkinter.CTk()
-	window.geometry("700x500")
-	window.title("Aviso - Método de Pomodoro")
 
-	label = customtkinter.CTkLabel(window, text=f"{config.data[etapa][0]} de \n{config.data[etapa][1]} minuto(s).", font=("Arial", 50))
-	label.pack(padx=10, pady=10)
-
-
-	window.protocol("WM_DELETE_WINDOW", lambda: window.destroy())
-	window.mainloop()
+	painelSay = f"Etapa {etapa+1}: {config.data[etapa][0]} de {config.data[etapa][1]} minuto(s).\n"
+	if config.data[etapa][1] == 1:
+		painelSay = painelSay[:painelSay.index("(s)")]
+	else:
+		painelSay = painelSay[:painelSay.index("(s)")]+"s"
+	speech = pyttsx3.init()
+	speech.save_to_file(painelSay, 'speech.wav')
+	speech.runAndWait()
+	speech.stop()
+	playsound("Alert.mp3")
+	playsound("speech.wav")
 
 def th_aviso():
 	global config
 	global etapa
-	playsound('Alert.mp3')
 
 	th = threading.Thread(target=aviso)
-	# th.daemon = etapa < len(config.data)-1
-	th.daemon = True
 	th.start()
 
 def main():
@@ -52,15 +51,13 @@ def main():
 	init_date = datetime.fromtimestamp(init_time)
 
 	etapaCount = config.data[etapa][1]*60
-	count = -1
+	painel += f"Etapa {etapa+1}: {config.data[etapa][0]} de {config.data[etapa][1]} minuto(s).\n"
+	th_aviso()
+	count = 0
 
 	while True:
 		count += 1
-		if count == 0:
-			painel += f"Etapa {etapa+1}: {config.data[etapa][0]} de {config.data[etapa][1]} minuto(s).\n"
-			th_aviso()
-
-		elif count >= etapaCount:
+		if count >= etapaCount:
 			etapa += 1
 			if (etapa >= len(config.data)):
 				break
