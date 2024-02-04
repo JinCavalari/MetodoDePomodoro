@@ -22,18 +22,19 @@ class ConfigJson():
 def aviso():
 	global config
 	global etapa
+	global speech
 
 	painelSay = f"Etapa {etapa+1}: {config.data[etapa][0]} de {config.data[etapa][1]} minuto(s).\n"
 	if config.data[etapa][1] == 1:
 		painelSay = painelSay[:painelSay.index("(s)")]
 	else:
 		painelSay = painelSay[:painelSay.index("(s)")]+"s"
+	playsound("Alert.mp3")
 	speech = pyttsx3.init()
-	speech.save_to_file(painelSay, 'speech.wav')
+	speech.say(painelSay)
 	speech.runAndWait()
 	speech.stop()
-	playsound("Alert.mp3")
-	playsound("speech.wav")
+	speech = None
 
 def th_aviso():
 	global config
