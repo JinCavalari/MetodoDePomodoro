@@ -3,10 +3,19 @@ from time import sleep
 import time
 from datetime import datetime, timedelta
 import json
-import pyttsx3
+try:
+	import pyttsx3
+except ImportError:
+	os.system("pip install pyttsx3")
+	import pyttsx3
+
 
 import threading
-from playsound import playsound
+try:
+	from playsound import playsound
+except ImportError:
+	os.system("pip install playsound==1.2.2")
+	from playsound import playsound
 
 class ConfigJson():
 	def __init__(self, fileJson):

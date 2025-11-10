@@ -3,7 +3,8 @@ Projeto em Python com algorítmo para executar o Método de Pomodoro de acordo c
 <br><b>Aviso:</b> Feito em Sistema Operacional Windows, então é provável que tenha incompatibilidade com outras OS's (Linux e Mac) em <b>relação ao uso das bibliotecas.</b>
 
 <b>Dependências: Python >= 3.10.9, playsound 1.2.2, pyttsx3</b><br>
-Com exceção do Python, as dependências podem ser instaladas automaticamente ao executar o arquivo "dependecias.bat"
+Com exceção do Python, as dependências são instaladas automaticamente caso não tenha sido instaladas<br>
+<b>Obs => A biblioteca playsound pode ocorrer um erro ao usar versões posteriores, então ao executar esse script, é importante usar a versão especificada (versão 1.2.2)</b>
 
 <b>Configurações</b><br>
 Para mudar a execução do programa de acordo com suas preferências, basta editar o arquivo "config.json". A execução do programa é baseado em etapas, cada etapa é um array dentro do arquivo, contendo respectivamente a descrição e o número de minutos. É possível mudar: a descrição, o número de minutos e o número de etapas, basta apagar ou acrescentar arrays todos separados por vírgulas. 
