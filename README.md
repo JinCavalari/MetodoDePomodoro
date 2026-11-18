@@ -13,3 +13,5 @@ Para mudar a execução do programa de acordo com suas preferências, basta edit
 Para executar o programa basta abrir o arquivo "exec.bat" ou executar "python main.py" no terminal com o diretório do projeto, no caso de outros sistemas operacionais, esse comando pode mudar. Ao executar o programa, irá printar: as etapas, descrições, minutos e tempo decorrido. A cada etapa é tocado um efeito sonoro e executado uma arquvo de audio falando a descrição e número de minutos.
 
 <i>Jin Hwa David Cavalari</i>
+
+<a href="https://jincavalari.github.io/MetodoDePomodoro/Web/">Online com Instalação PWA</a>
