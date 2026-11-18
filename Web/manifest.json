@@ -1,0 +1,25 @@
+{
+    "name": "Pomodoro Focus",
+    "short_name": "Pomodoro",
+    "description": "Seu espaço de concentração e produtividade.",
+    "start_url": "./",
+    "scope": "./",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#12141c",
+    "theme_color": "#12141c",
+    "icons": [
+        {
+            "src": "assets/icons/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "assets/icons/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        }
+    ]
+}
